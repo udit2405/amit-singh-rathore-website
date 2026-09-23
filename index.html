@@ -14,41 +14,41 @@
 
 <style>
 :root{
-  --ink:#211d19;
-  --ink-soft:#5a5349;
-  --paper:#f6f2ea;
+  --ink:#1a1613;
+  --ink-soft:#665c4d;
+  --paper:#faf7f1;
   --surface:#ffffff;
-  --surface-alt:#efe9dd;
-  --line:#ddd4c4;
-  --accent:#8a6f52;
-  --accent-deep:#5f4c39;
-  --accent-tint:#efe4d2;
+  --surface-alt:#f1e9d8;
+  --line:#e3d8c3;
+  --accent:#a67c3d;
+  --accent-deep:#6e4f24;
+  --accent-tint:#f3e6c9;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ink:#eee8dd;
-    --ink-soft:#b9ae9d;
-    --paper:#161410;
-    --surface:#1d1a15;
-    --surface-alt:#252119;
-    --line:#39332a;
-    --accent:#c7a87c;
-    --accent-deep:#e4c99a;
-    --accent-tint:#2a2419;
+    --ink:#f7f1e6;
+    --ink-soft:#cabfab;
+    --paper:#121010;
+    --surface:#1c1815;
+    --surface-alt:#26201a;
+    --line:#3d352a;
+    --accent:#d7ac6c;
+    --accent-deep:#f0cd94;
+    --accent-tint:#2f2718;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --ink:#eee8dd;
-  --ink-soft:#b9ae9d;
-  --paper:#161410;
-  --surface:#1d1a15;
-  --surface-alt:#252119;
-  --line:#39332a;
-  --accent:#c7a87c;
-  --accent-deep:#e4c99a;
-  --accent-tint:#2a2419;
+  --ink:#f7f1e6;
+  --ink-soft:#cabfab;
+  --paper:#121010;
+  --surface:#1c1815;
+  --surface-alt:#26201a;
+  --line:#3d352a;
+  --accent:#d7ac6c;
+  --accent-deep:#f0cd94;
+  --accent-tint:#2f2718;
   color-scheme:dark;
 }
 
@@ -202,6 +202,13 @@ h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-top:14px;}
 .factor-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:28px;list-style:none;padding:0;}
 .factor-list li{font-size:.88rem;color:var(--ink-soft);padding-left:18px;position:relative;}
 .factor-list li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;background:var(--accent);}
+.feature-note{
+  margin-top:32px;padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:4px;background:var(--surface);
+}
+.feature-note .eyebrow{margin-bottom:10px;}
+.feature-note h3{font-size:1.05rem;}
+.feature-note p{font-size:.88rem;margin-top:10px;}
 .pull-quote{
   font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;line-height:1.5;
   color:var(--ink);border-left:2px solid var(--accent);padding-left:24px;
@@ -532,7 +539,13 @@ footer{border-top:1px solid var(--line);background:var(--surface-alt);}
         <li>Nutrition habits</li>
         <li>Previous training experience</li>
         <li>Personal goals</li>
+        <li>Post-pregnancy fitness</li>
       </ul>
+      <div class="feature-note">
+        <span class="eyebrow">Also Offered</span>
+        <h3>Post-Pregnancy Fitness Support</h3>
+        <p>Amit also works with new mothers rebuilding fitness after pregnancy, with training paced around recovery, energy levels and medical clearance to exercise. Always begin post-pregnancy training only after clearance from your doctor.</p>
+      </div>
     </div>
     <p class="pull-quote">Whether your goal is getting stronger, improving your physique, losing body fat, feeling more confident, or simply building a sustainable fitness routine — your program should reflect who you are, not a generic template.</p>
   </div>
