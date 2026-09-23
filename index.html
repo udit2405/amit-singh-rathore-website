@@ -356,9 +356,58 @@ input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;bord
 .form-success.show ~ form{display:none;}
 
 /* ---------- FOOTER ---------- */
-footer{border-top:1px solid var(--line);padding-block:40px;}
-.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-row p{font-size:.78rem;}
+footer{border-top:1px solid var(--line);background:var(--surface-alt);}
+.footer-grid{
+  display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;
+  padding-block:64px 40px;
+}
+@media (max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;row-gap:36px;}}
+@media (max-width:520px){.footer-grid{grid-template-columns:1fr;}}
+.footer-brand .brand{font-size:1.1rem;}
+.footer-brand p{margin-top:14px;font-size:.86rem;max-width:32ch;}
+.footer-col h4{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:600;margin-bottom:16px;font-family:'Inter',sans-serif;
+}
+.footer-col{display:flex;flex-direction:column;gap:11px;}
+.footer-col a, .footer-legal-btn{
+  font-size:.86rem;color:var(--ink-soft);transition:color .2s;text-align:left;
+  background:none;border:none;padding:0;cursor:pointer;font-family:'Inter',sans-serif;
+  width:fit-content;
+}
+.footer-col a:hover, .footer-legal-btn:hover{color:var(--ink);}
+.footer-bottom{
+  border-top:1px solid var(--line);padding-block:22px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{font-size:.76rem;}
+.footer-bottom a{color:var(--ink-soft);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;transition:color .2s;}
+.footer-bottom a:hover{color:var(--accent-deep);text-decoration-color:var(--accent);}
+
+/* ---------- LEGAL MODAL ---------- */
+.legal-modal{
+  position:fixed;inset:0;z-index:100;background:color-mix(in srgb, var(--ink) 55%, transparent);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+}
+.legal-modal[hidden]{display:none;}
+.legal-modal-inner{
+  background:var(--surface);border:1px solid var(--line);border-radius:6px;
+  max-width:640px;width:100%;max-height:82vh;overflow-y:auto;padding:40px 36px;position:relative;
+}
+@media (max-width:560px){.legal-modal-inner{padding:32px 22px;}}
+.legal-close{
+  position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;
+  font-size:1.4rem;color:var(--ink-soft);line-height:1;padding:8px;
+}
+.legal-close:hover{color:var(--ink);}
+.legal-modal-inner h3{font-size:1.4rem;margin-bottom:6px;}
+.legal-modal-inner .legal-note{
+  font-size:.78rem;font-style:italic;color:var(--ink-soft);margin-top:8px;
+  padding:10px 14px;border-left:2px solid var(--accent);
+}
+.legal-modal-inner h4{font-size:.95rem;margin-top:24px;margin-bottom:8px;font-family:'Fraunces',serif;font-weight:500;}
+.legal-modal-inner p, .legal-modal-inner li{font-size:.86rem;margin-top:8px;}
+.legal-modal-inner ul{padding-left:20px;margin-top:8px;}
 
 /* ---------- MOBILE STICKY CTA ---------- */
 .sticky-cta{
@@ -823,11 +872,44 @@ footer{border-top:1px solid var(--line);padding-block:40px;}
 </main>
 
 <footer>
-  <div class="wrap footer-row">
-    <p>© <span id="yr"></span> Amit Singh Rathore. Head Coach, Women's Fitness at GroomFit.</p>
-    <p>Seasoned Fitness Trainer · Head Coach, Women's Fitness</p>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="brand">Amit Singh Rathore <span>·</span></div>
+      <p>Head Coach, Women's Fitness at GroomFit. Advanced, personalized fitness coaching for women — in person and online, worldwide.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#about">About Amit</a>
+      <a href="#womens-fitness">Women's Fitness</a>
+      <a href="#coaching">Coaching</a>
+      <a href="#experience">Experience</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <button type="button" class="footer-legal-btn" data-legal="privacy">Privacy Policy</button>
+      <button type="button" class="footer-legal-btn" data-legal="terms">Terms of Service</button>
+      <button type="button" class="footer-legal-btn" data-legal="disclaimer">Disclaimer</button>
+    </div>
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <a href="#contact">Request a Consultation</a>
+      <a href="https://www.groomfit.in/" target="_blank" rel="noopener">GroomFit</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© <span id="yr"></span> Amit Singh Rathore. All rights reserved.</p>
+    <p>Site made by <a href="https://reckonaai.com" target="_blank" rel="noopener">reckonaai.com</a></p>
   </div>
 </footer>
+
+<div class="legal-modal" id="legalModal" hidden>
+  <div class="legal-modal-inner">
+    <button class="legal-close" id="legalClose" aria-label="Close">&times;</button>
+    <div id="legalContent"></div>
+  </div>
+</div>
 
 <div class="sticky-cta">
   <a href="#contact" class="btn btn-primary">Book a Consultation</a>
@@ -836,6 +918,61 @@ footer{border-top:1px solid var(--line);padding-block:40px;}
 <script>
 (function(){
   try{document.getElementById('yr').textContent = new Date().getFullYear();}catch(e){}
+
+  var LEGAL = {
+    privacy: {
+      title: 'Privacy Policy',
+      html: '<p class="legal-note">This is a general-purpose policy provided as a starting point. Review it with a legal professional before relying on it, especially for clients in the USA, Australia and other jurisdictions with specific data-protection requirements.</p>' +
+        '<h4>Information We Collect</h4><p>When you submit the consultation form, we collect the details you provide — your name, email, phone/WhatsApp number, country, fitness goals and current fitness level — solely to respond to your enquiry and, where you become a client, to plan and deliver your coaching.</p>' +
+        '<h4>How We Use Your Information</h4><ul><li>To respond to consultation requests and schedule calls</li><li>To design and adjust your personalized training program</li><li>To communicate with you about your coaching and progress</li></ul>' +
+        '<h4>Sharing</h4><p>Your information is not sold or shared with third parties, except where required to deliver coaching services you have requested or where required by law.</p>' +
+        '<h4>Data Retention</h4><p>We retain your information for as long as needed to provide coaching services and respond to enquiries, and delete it on request.</p>' +
+        '<h4>Your Rights</h4><p>You may request access to, correction of, or deletion of your personal information at any time by contacting us through the consultation form.</p>' +
+        '<h4>Contact</h4><p>Questions about this policy can be sent via the consultation form on this website.</p>' +
+        '<p style="margin-top:20px;font-size:.76rem;color:var(--ink-soft);">Last updated: September 2026</p>'
+    },
+    terms: {
+      title: 'Terms of Service',
+      html: '<p class="legal-note">This is a general-purpose template. Have it reviewed by a legal professional before publishing it as binding terms.</p>' +
+        '<h4>Coaching Services</h4><p>Amit Singh Rathore provides personal fitness training and online coaching services. Programs are personalized based on information you provide during your consultation and are not a substitute for medical advice.</p>' +
+        '<h4>Medical Disclaimer</h4><p>Consult a physician before beginning any new fitness program, particularly if you have a pre-existing medical condition, injury, or are pregnant. Participation in training is at your own risk.</p>' +
+        '<h4>Client Responsibilities</h4><p>You agree to provide accurate information about your health and fitness level, to follow programming as guided, and to communicate any concerns or changes in your condition promptly.</p>' +
+        '<h4>Payments &amp; Cancellations</h4><p>Coaching fees, packages and cancellation terms will be confirmed directly with you during your consultation before any engagement begins.</p>' +
+        '<h4>Limitation of Liability</h4><p>To the extent permitted by law, Amit Singh Rathore and GroomFit are not liable for injuries or damages arising from participation in training programs, except where caused by proven negligence.</p>' +
+        '<h4>Changes</h4><p>These terms may be updated from time to time; continued use of coaching services constitutes acceptance of the current terms.</p>' +
+        '<p style="margin-top:20px;font-size:.76rem;color:var(--ink-soft);">Last updated: September 2026</p>'
+    },
+    disclaimer: {
+      title: 'Disclaimer',
+      html: '<p>The content on this website — including training methodology, program descriptions and FAQ answers — is provided for general informational purposes and reflects Amit Singh Rathore\'s professional coaching approach. It is not medical, nutritional or physiotherapy advice.</p>' +
+        '<p>Always consult a qualified healthcare provider before starting any exercise program, especially if you have a pre-existing health condition, injury or are pregnant.</p>' +
+        '<p>Results from fitness coaching vary by individual and depend on factors including consistency, starting fitness level, nutrition and lifestyle. No specific outcome is guaranteed.</p>' +
+        '<p style="margin-top:20px;font-size:.76rem;color:var(--ink-soft);">Last updated: September 2026</p>'
+    }
+  };
+
+  var legalModal = document.getElementById('legalModal');
+  var legalContent = document.getElementById('legalContent');
+  var legalClose = document.getElementById('legalClose');
+
+  function openLegal(key){
+    var entry = LEGAL[key];
+    if(!entry) return;
+    legalContent.innerHTML = '<h3>' + entry.title + '</h3>' + entry.html;
+    legalModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLegal(){
+    legalModal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.footer-legal-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ openLegal(btn.getAttribute('data-legal')); });
+  });
+  legalClose.addEventListener('click', closeLegal);
+  legalModal.addEventListener('click', function(e){ if(e.target === legalModal) closeLegal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !legalModal.hidden) closeLegal(); });
 
   var burger = document.getElementById('burgerBtn');
   var mnav = document.getElementById('mnav');
