@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amit Singh Rathore</title>
+<meta name="description" content="Amit Singh Rathore is an advanced fitness trainer with 15+ years of experience, providing personalized fitness coaching for women and clients internationally.">
+<meta property="og:title" content="Amit Singh Rathore | Advanced Fitness Trainer & Women's Fitness Coach">
+<meta property="og:description" content="Advanced personal fitness coaching built around your goals, your lifestyle and your body. 15+ years of experience. Trainer at GroomFit.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#211d19;
+  --ink-soft:#5a5349;
+  --paper:#f6f2ea;
+  --surface:#ffffff;
+  --surface-alt:#efe9dd;
+  --line:#ddd4c4;
+  --accent:#8a6f52;
+  --accent-deep:#5f4c39;
+  --accent-tint:#efe4d2;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eee8dd;
+    --ink-soft:#b9ae9d;
+    --paper:#161410;
+    --surface:#1d1a15;
+    --surface-alt:#252119;
+    --line:#39332a;
+    --accent:#c7a87c;
+    --accent-deep:#e4c99a;
+    --accent-tint:#2a2419;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eee8dd;
+  --ink-soft:#b9ae9d;
+  --paper:#161410;
+  --surface:#1d1a15;
+  --surface-alt:#252119;
+  --line:#39332a;
+  --accent:#c7a87c;
+  --accent-deep:#e4c99a;
+  --accent-tint:#2a2419;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  text-wrap:balance;
+  margin:0;
+  color:var(--ink);
+}
+p{margin:0;color:var(--ink-soft);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;}
+.eyebrow{
+  font-size:0.72rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--accent-deep);
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:.5em;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--accent);display:inline-block;}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:24px;}
+section{padding-block:96px;}
+@media (max-width:720px){section{padding-block:64px;}}
+
+/* ---------- NAV ---------- */
+header.site{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding-block:16px;}
+.brand{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:.02em;}
+.brand span{color:var(--accent);}
+.nav-links{display:flex;gap:32px;list-style:none;margin:0;padding:0;}
+.nav-links a{font-size:.85rem;color:var(--ink-soft);transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{
+  border:1px solid var(--ink);
+  padding:9px 20px;border-radius:999px;font-size:.8rem;font-weight:600;
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--ink);color:var(--paper);}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.burger span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px 0;transition:.25s;}
+#mnav{display:none;}
+@media (max-width:860px){
+  .nav-links{display:none;}
+  .nav-cta.desktop-only{display:none;}
+  .burger{display:block;}
+  #mnav.open{display:flex;}
+  #mnav{
+    position:fixed;inset:0;top:64px;background:var(--paper);z-index:49;
+    flex-direction:column;padding:32px 24px;gap:22px;
+  }
+  #mnav a{font-family:'Fraunces',serif;font-size:1.4rem;}
+  #mnav .nav-cta{align-self:flex-start;}
+}
+
+/* ---------- HERO ---------- */
+.hero{padding-top:64px;padding-bottom:80px;}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px;}}
+.hero h1{font-size:clamp(2.4rem,4.8vw,3.6rem);line-height:1.06;}
+.hero .lede{font-size:1.08rem;margin-top:22px;max-width:46ch;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:32px;}
+.hero-badges div{font-size:.78rem;color:var(--ink-soft);padding-left:16px;position:relative;}
+.hero-badges div::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:999px;font-size:.88rem;font-weight:600;
+  transition:transform .2s,background .2s,color .2s,border-color .2s;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--ink);color:var(--paper);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-secondary{border-color:var(--ink);color:var(--ink);background:transparent;}
+.btn-secondary:hover{background:var(--ink);color:var(--paper);}
+.credibility-line{
+  margin-top:28px;font-size:.8rem;color:var(--ink-soft);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.credibility-line b{color:var(--ink);font-weight:600;}
+
+.hero-image{
+  position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;
+  background:linear-gradient(155deg,var(--surface-alt),var(--surface));
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+}
+.ph-label{
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);padding:10px 16px;border:1px dashed var(--line);border-radius:999px;
+}
+.hero-image .ph-inner{display:flex;flex-direction:column;gap:14px;align-items:center;padding:24px;}
+.hero-image svg{opacity:.35;}
+
+/* ---------- TRUST STRIP ---------- */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);}
+.trust .wrap{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);}}
+.trust-item{
+  padding:30px 20px;border-right:1px solid var(--line);text-align:center;
+}
+.trust .wrap .trust-item:last-child{border-right:none;}
+@media (max-width:860px){.trust-item:nth-child(2n){border-right:none;} .trust-item{border-bottom:1px solid var(--line);}}
+.trust-item .num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--accent-deep);}
+.trust-item .lbl{font-size:.76rem;color:var(--ink-soft);margin-top:4px;}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:36px;}}
+.about-image{
+  aspect-ratio:3/4;border-radius:4px;border:1px solid var(--line);
+  background:linear-gradient(160deg,var(--surface-alt),var(--surface));
+  display:flex;align-items:center;justify-content:center;
+}
+h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-top:14px;}
+.section-head{max-width:640px;margin-bottom:44px;}
+.section-head.center{margin-inline:auto;text-align:center;}
+.about-copy p{margin-top:18px;font-size:1rem;}
+.about-copy p:first-child{margin-top:0;}
+.about-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px;}
+.about-facts div{border-top:1px solid var(--line);padding-top:12px;font-size:.85rem;}
+.about-facts b{display:block;color:var(--ink);font-family:'Fraunces',serif;font-size:1rem;font-weight:500;margin-bottom:2px;}
+
+/* ---------- WOMEN'S FITNESS ---------- */
+.womens{background:var(--surface-alt);}
+.womens-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+@media (max-width:900px){.womens-grid{grid-template-columns:1fr;gap:36px;}}
+.factor-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:28px;list-style:none;padding:0;}
+.factor-list li{font-size:.88rem;color:var(--ink-soft);padding-left:18px;position:relative;}
+.factor-list li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;background:var(--accent);}
+.pull-quote{
+  font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;line-height:1.5;
+  color:var(--ink);border-left:2px solid var(--accent);padding-left:24px;
+}
+
+/* ---------- WHO HE WORKS WITH ---------- */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px;}
+@media (max-width:900px){.card-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.card-grid{grid-template-columns:1fr;}}
+.card{background:var(--surface);padding:34px 28px;transition:background .25s;}
+.card:hover{background:var(--surface-alt);}
+.card .idx{font-family:'Fraunces',serif;font-size:.8rem;color:var(--accent);}
+.card h3{font-size:1.15rem;margin-top:14px;}
+.card p{margin-top:10px;font-size:.87rem;}
+
+/* ---------- APPROACH ---------- */
+.approach-list{margin-top:12px;}
+.approach-row{
+  display:grid;grid-template-columns:110px 1fr;gap:28px;
+  padding-block:30px;border-top:1px solid var(--line);
+}
+.approach-row:last-child{border-bottom:1px solid var(--line);}
+.approach-row .step-num{font-family:'Fraunces',serif;font-size:2.1rem;color:var(--accent-tint);
+  -webkit-text-stroke:1px var(--accent);color:transparent;}
+@media (max-width:640px){.approach-row{grid-template-columns:56px 1fr;gap:16px;}
+  .approach-row .step-num{font-size:1.3rem;}}
+.approach-row h3{font-size:1.2rem;}
+.approach-row p{margin-top:8px;max-width:52ch;font-size:.92rem;}
+
+/* ---------- ONLINE COACHING ---------- */
+.online{background:var(--ink);color:var(--paper);}
+.online h2, .online .eyebrow{color:var(--paper);}
+.online .eyebrow{color:var(--accent-deep);}
+.online p{color:color-mix(in srgb, var(--paper) 70%, transparent);}
+.online-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+@media (max-width:900px){.online-grid{grid-template-columns:1fr;gap:32px;}}
+.geo-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;}
+.geo-pill{
+  border:1px solid color-mix(in srgb, var(--paper) 30%, transparent);
+  border-radius:999px;padding:8px 18px;font-size:.78rem;letter-spacing:.04em;
+}
+.online-list{list-style:none;padding:0;margin-top:28px;display:grid;gap:16px;}
+.online-list li{
+  padding-left:26px;position:relative;font-size:.92rem;
+  color:color-mix(in srgb, var(--paper) 85%, transparent);
+}
+.online-list li::before{content:"—";position:absolute;left:0;color:var(--accent-deep);}
+
+/* ---------- PROOF / GALLERY ---------- */
+.gallery-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:14px;margin-top:12px;}
+@media (max-width:860px){.gallery-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.gallery-grid{grid-template-columns:1fr;}}
+.gallery-grid .g1{grid-row:span 2;}
+.gph{
+  border:1px solid var(--line);border-radius:4px;background:var(--surface-alt);
+  display:flex;align-items:center;justify-content:center;min-height:180px;aspect-ratio:4/5;
+}
+.gallery-grid .g1{aspect-ratio:auto;}
+.gph .ph-label{font-size:.66rem;}
+
+/* ---------- GROOMFIT ---------- */
+.groomfit{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.groomfit-inner{display:flex;gap:48px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.gf-logo{
+  width:140px;height:64px;border:1px dashed var(--line);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;font-size:.62rem;
+  letter-spacing:.1em;color:var(--ink-soft);text-align:center;flex-shrink:0;
+}
+.groomfit-copy{max-width:640px;}
+.groomfit-copy p{margin-top:12px;font-size:.95rem;}
+
+/* ---------- TIMELINE ---------- */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:16px;}
+@media (max-width:760px){.timeline{grid-template-columns:1fr;gap:32px;}}
+.tl-item{text-align:left;border-top:2px solid var(--accent);padding-top:18px;}
+.tl-item .big{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--ink);}
+.tl-item .cap{font-size:.85rem;color:var(--ink-soft);margin-top:6px;max-width:26ch;}
+
+/* ---------- COMPARISON ---------- */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px;}
+@media (max-width:760px){.compare{grid-template-columns:1fr;}}
+.compare .col{background:var(--surface);padding:36px 32px;}
+.compare .col.highlight{background:var(--accent-tint);}
+.compare h4{font-size:1rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);}
+.compare.col h4{}
+.compare .col.highlight h4{color:var(--accent-deep);}
+.compare ul{list-style:none;padding:0;margin-top:20px;display:grid;gap:12px;}
+.compare li{font-size:.9rem;padding-left:20px;position:relative;color:var(--ink-soft);}
+.compare li::before{content:"×";position:absolute;left:0;color:var(--ink-soft);}
+.compare .col.highlight li::before{content:"✓";color:var(--accent-deep);}
+.compare .col.highlight li{color:var(--ink);}
+
+/* ---------- TESTIMONIALS ---------- */
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:12px;}
+@media (max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+.testi-card{
+  border:1px solid var(--line);border-radius:4px;padding:32px;background:var(--surface);
+}
+.testi-card .quote-mark{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--accent);line-height:1;}
+.testi-card p.ph{margin-top:14px;font-size:.85rem;font-style:italic;color:var(--ink-soft);}
+.testi-card .who{margin-top:20px;display:flex;justify-content:space-between;font-size:.78rem;
+  border-top:1px solid var(--line);padding-top:14px;color:var(--ink-soft);}
+
+/* ---------- FAQ ---------- */
+.faq-list{margin-top:8px;border-top:1px solid var(--line);}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;cursor:pointer;
+  padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);
+}
+.faq-q .plus{font-family:'Inter',sans-serif;font-size:1.3rem;color:var(--accent);transition:transform .25s;flex-shrink:0;}
+.faq-item.open .plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-a p{padding:0 4px 22px;font-size:.9rem;max-width:64ch;}
+.faq-item.open .faq-a{max-height:200px;}
+
+/* ---------- FINAL CTA ---------- */
+.final-cta{
+  text-align:center;background:var(--ink);color:var(--paper);border-radius:6px;
+  padding:76px 32px;margin-inline:24px;
+}
+.final-cta h2{color:var(--paper);font-size:clamp(1.9rem,3.6vw,2.6rem);max-width:20ch;margin-inline:auto;}
+.final-cta p{color:color-mix(in srgb, var(--paper) 72%, transparent);margin-top:18px;max-width:48ch;margin-inline:auto;}
+.final-cta .cta-row{justify-content:center;}
+.final-cta .btn-secondary{border-color:color-mix(in srgb, var(--paper) 50%, transparent);color:var(--paper);}
+.final-cta .btn-secondary:hover{background:var(--paper);color:var(--ink);}
+.final-cta .btn-primary{background:var(--accent-deep);color:var(--ink);}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px;}}
+form{display:grid;gap:18px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+label{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:7px;}
+input,select{
+  width:100%;padding:13px 14px;background:var(--surface);border:1px solid var(--line);
+  border-radius:3px;color:var(--ink);font-family:'Inter',sans-serif;font-size:.92rem;
+}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent);}
+.field-error{font-size:.72rem;color:#b5502f;margin-top:5px;min-height:1em;}
+.submit-btn{margin-top:6px;}
+.form-note{font-size:.78rem;color:var(--ink-soft);margin-top:14px;}
+.contact-side .about-facts{margin-top:0;}
+.contact-side h3{font-size:1.3rem;margin-top:0;}
+.form-success{
+  display:none;border:1px solid var(--accent);border-radius:4px;padding:24px;
+  background:var(--accent-tint);text-align:center;
+}
+.form-success.show{display:block;}
+.form-success.show ~ form{display:none;}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);padding-block:40px;}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-row p{font-size:.78rem;}
+
+/* ---------- MOBILE STICKY CTA ---------- */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));
+  background:color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  display:none;
+}
+.sticky-cta a{display:block;text-align:center;}
+@media (max-width:760px){.sticky-cta{display:block;} body{padding-bottom:70px;}}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:1;transform:none;}
+@media (prefers-reduced-motion: no-preference){
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a href="#home" class="brand">Amit Singh Rathore <span>·</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About Amit</a></li>
+      <li><a href="#womens-fitness">Women's Fitness</a></li>
+      <li><a href="#coaching">Coaching</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="btn-cta nav-cta desktop-only">Book Consultation</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mnav">
+    <a href="#about">About Amit</a>
+    <a href="#womens-fitness">Women's Fitness</a>
+    <a href="#coaching">Coaching</a>
+    <a href="#experience">Experience</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="btn btn-primary nav-cta">Book Consultation</a>
+  </nav>
+</header>
+
+<main id="home">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Advanced Fitness Trainer · 15+ Years</span>
+      <h1>Train With Experience. Transform With Purpose.</h1>
+      <p class="lede">Advanced personal fitness coaching built around your goals, your lifestyle and your body — for women who want a structured, professional approach to training.</p>
+      <div class="hero-badges">
+        <div>15+ Years of Training Experience</div>
+        <div>Women's Fitness Coaching</div>
+        <div>International Online Coaching</div>
+      </div>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">Book a Personal Consultation</a>
+        <a href="#coaching" class="btn btn-secondary">Explore Coaching</a>
+      </div>
+      <div class="credibility-line"><b>Trainer at GroomFit</b> — Premium Fitness Coaching</div>
+    </div>
+    <div class="hero-image reveal">
+      <div class="ph-inner">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        <span class="ph-label">AMIT PROFESSIONAL PORTRAIT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust" style="padding-block:0;">
+  <div class="wrap">
+    <div class="trust-item"><div class="num">15+ Yrs</div><div class="lbl">Professional Fitness Coaching</div></div>
+    <div class="trust-item"><div class="num">Women's</div><div class="lbl">Fitness Specialization</div></div>
+    <div class="trust-item"><div class="num">USA · AUS</div><div class="lbl">International Clients</div></div>
+    <div class="trust-item"><div class="num">GroomFit</div><div class="lbl">Exclusive Fitness Brand</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-image reveal">
+      <div class="ph-inner"><span class="ph-label">AMIT TRAINING IMAGE</span></div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Meet Your Trainer</span>
+      <h2>More Than 15 Years of Experience. One Focus: Your Progress.</h2>
+      <p>Amit Singh Rathore has spent over fifteen years working as a fitness trainer, building a career around one central idea — that training only works when it's built around the person doing it.</p>
+      <p>Across more than a decade of coaching, Amit has worked with a wide range of clients, developing a particular focus on women's fitness — helping clients build strength, improve their physique, and develop training habits they can actually sustain.</p>
+      <p>Today, Amit works with clients internationally, including women across the USA and Australia, and is part of the trainer network at GroomFit, a premium fitness coaching brand. His approach is structured, personal, and rooted in the understanding that every body, lifestyle and goal is different.</p>
+      <div class="about-facts">
+        <div><b>15+ Years</b>Fitness training experience</div>
+        <div><b>Advanced</b>Fitness trainer</div>
+        <div><b>Women's Fitness</b>Core specialization</div>
+        <div><b>International</b>USA, Australia &amp; India clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WOMEN'S FITNESS -->
+<section id="womens-fitness" class="womens">
+  <div class="wrap womens-grid">
+    <div>
+      <span class="eyebrow">Women's Fitness</span>
+      <h2>Fitness Designed Around Women — Not Generic Workout Plans</h2>
+      <p style="margin-top:18px;font-size:1rem;">Women's fitness shouldn't be approached as a collection of random exercises borrowed from a template. Your training should reflect where you're starting from — and where you want to go.</p>
+      <ul class="factor-list">
+        <li>Individual fitness levels</li>
+        <li>Strength development</li>
+        <li>Body composition goals</li>
+        <li>Mobility</li>
+        <li>Training consistency</li>
+        <li>Lifestyle &amp; work schedules</li>
+        <li>Recovery</li>
+        <li>Nutrition habits</li>
+        <li>Previous training experience</li>
+        <li>Personal goals</li>
+      </ul>
+    </div>
+    <p class="pull-quote">Whether your goal is getting stronger, improving your physique, losing body fat, feeling more confident, or simply building a sustainable fitness routine — your program should reflect who you are, not a generic template.</p>
+  </div>
+</section>
+
+<!-- WHO HE WORKS WITH -->
+<section id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Who Amit Works With</span>
+      <h2>Designed For Women Who Want More From Their Training</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card"><span class="idx">01</span><h3>The Busy Professional</h3><p>For women balancing demanding careers and personal goals.</p></div>
+      <div class="card"><span class="idx">02</span><h3>The Fitness Beginner</h3><p>For women who want structured guidance and confidence in the gym.</p></div>
+      <div class="card"><span class="idx">03</span><h3>The Transformation Seeker</h3><p>For women focused on improving body composition and physique.</p></div>
+      <div class="card"><span class="idx">04</span><h3>The Experienced Trainee</h3><p>For women who already train but want better structure, progression and accountability.</p></div>
+      <div class="card"><span class="idx">05</span><h3>The Bride-to-Be</h3><p>For women preparing for an important milestone and looking for structured fitness coaching.</p></div>
+      <div class="card"><span class="idx">06</span><h3>The Advanced Client</h3><p>For those seeking a more advanced, professionally structured coaching relationship.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING APPROACH -->
+<section id="coaching">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Coaching Approach</span>
+      <h2>A Structured, Four-Stage Methodology</h2>
+    </div>
+    <div class="approach-list">
+      <div class="approach-row">
+        <span class="step-num">01</span>
+        <div><h3>Understand</h3><p>Understand your current fitness level, lifestyle, goals and challenges before anything is prescribed.</p></div>
+      </div>
+      <div class="approach-row">
+        <span class="step-num">02</span>
+        <div><h3>Personalize</h3><p>Build training around your individual requirements — not a generic plan applied to everyone.</p></div>
+      </div>
+      <div class="approach-row">
+        <span class="step-num">03</span>
+        <div><h3>Progress</h3><p>Track performance and progressively develop strength and fitness over time.</p></div>
+      </div>
+      <div class="approach-row">
+        <span class="step-num">04</span>
+        <div><h3>Sustain</h3><p>Build habits and systems that continue beyond short-term transformations.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONLINE COACHING -->
+<section class="online">
+  <div class="wrap online-grid">
+    <div>
+      <span class="eyebrow">Online Coaching</span>
+      <h2>Professional Coaching. Wherever You Are.</h2>
+      <p style="margin-top:18px;">Amit works with clients remotely, regardless of location — bringing the same structured, personalized approach to online coaching as to in-person training.</p>
+      <div class="geo-row">
+        <span class="geo-pill">USA</span>
+        <span class="geo-pill">Australia</span>
+        <span class="geo-pill">India</span>
+        <span class="geo-pill">International Clients</span>
+      </div>
+    </div>
+    <ul class="online-list">
+      <li>Personalized workout programming</li>
+      <li>Direct trainer guidance</li>
+      <li>Ongoing progress tracking</li>
+      <li>Accountability check-ins</li>
+      <li>Continuous communication with your trainer</li>
+      <li>Structured, goal-oriented training</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROOF / GALLERY -->
+<section id="proof">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Real Coaching. Real Training.</span>
+      <h2>See Amit In Action With The Women He Coaches</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gph g1"><span class="ph-label">CLIENT TRAINING VIDEO</span></div>
+      <div class="gph"><span class="ph-label">CLIENT TRAINING IMAGE 01</span></div>
+      <div class="gph"><span class="ph-label">CLIENT TRAINING IMAGE 02</span></div>
+      <div class="gph"><span class="ph-label">CLIENT TRAINING IMAGE 03</span></div>
+      <div class="gph"><span class="ph-label">CLIENT TRAINING IMAGE 04</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GROOMFIT -->
+<section class="groomfit">
+  <div class="wrap groomfit-inner">
+    <div class="groomfit-copy">
+      <span class="eyebrow">Trainer at GroomFit</span>
+      <h2 style="font-size:1.7rem;margin-top:12px;">An Exclusive Fitness Brand</h2>
+      <p>Amit Singh Rathore is part of the trainer network behind GroomFit, an exclusive fitness brand focused on structured transformation and personalized coaching.</p>
+      <a href="#" class="btn btn-secondary" style="margin-top:20px;padding:12px 24px;font-size:.8rem;">Explore GroomFit</a>
+    </div>
+    <div class="gf-logo">GROOMFIT LOGO</div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Fifteen Years, One Discipline</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="big">15+ Years</div><div class="cap">Fitness training experience</div></div>
+      <div class="tl-item"><div class="big">Advanced</div><div class="cap">Personalized fitness coaching</div></div>
+      <div class="tl-item"><div class="big">International</div><div class="cap">Clients across USA &amp; Australia</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:var(--surface-alt);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Personal Coaching</span>
+      <h2>Random Workouts vs. Personal Coaching</h2>
+    </div>
+    <div class="compare">
+      <div class="col">
+        <h4>Random Online Workouts</h4>
+        <ul>
+          <li>Generic routines</li>
+          <li>No personalization</li>
+          <li>Unclear how to progress</li>
+          <li>Limited accountability</li>
+          <li>One-size-fits-all</li>
+        </ul>
+      </div>
+      <div class="col highlight">
+        <h4>Personal Coaching With Amit</h4>
+        <ul>
+          <li>Individualized training</li>
+          <li>Structured progression</li>
+          <li>Direct trainer guidance</li>
+          <li>Real accountability</li>
+          <li>Goal-oriented programming</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What Clients Say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <p class="ph">[CLIENT TESTIMONIAL]</p>
+        <div class="who"><span>[CLIENT NAME]</span><span>USA</span></div>
+      </div>
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <p class="ph">[CLIENT TESTIMONIAL]</p>
+        <div class="who"><span>[CLIENT NAME]</span><span>Australia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common Questions</h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q">Is Amit's coaching suitable for beginners?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Programs are built around your current fitness level, so beginners receive the same structured guidance as more experienced clients.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does Amit work with women?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — women's fitness is a core focus of Amit's coaching, alongside general and advanced personal training.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I train from home?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes, programs can be built for home training, gym training, or a combination of both, depending on your access and preference.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I work with Amit if I live in the USA?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Amit coaches clients remotely across the USA through online coaching.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I work with Amit if I live in Australia?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Amit works with clients in Australia through the same online coaching structure.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How is online coaching different from a generic workout plan?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Online coaching with Amit is built around your individual assessment, with ongoing guidance and progress tracking — rather than a fixed plan handed out to everyone.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will my program be personalized?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Every program starts with understanding your goals, lifestyle and current fitness level.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How often will my progress be reviewed?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Progress review frequency is discussed and agreed during your consultation, based on your program.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need access to a gym?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Not necessarily. Programs can be adapted for home training, minimal equipment, or full gym access.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can training be adapted around my work schedule?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — programs are designed to fit around a busy professional lifestyle wherever possible.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens during the initial consultation?<span class="plus">+</span></button>
+        <div class="faq-a"><p>The initial consultation is a conversation about your goals, lifestyle, current fitness level and what you're looking to achieve.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is Amit available for one-to-one coaching?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes, one-to-one coaching is available — please reach out through the consultation form for availability.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="final-cta reveal">
+    <h2>Your Fitness Deserves More Than a Generic Plan.</h2>
+    <p>Start with a conversation about your goals, your lifestyle and the kind of progress you're looking to achieve.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary">Book a Personal Consultation</a>
+      <a href="#contact" class="btn btn-secondary">Talk to Amit</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-side">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 style="font-size:2rem;margin-top:12px;">Request a Consultation</h2>
+      <p style="margin-top:16px;font-size:.95rem;">Tell Amit a little about your goals and current routine, and you'll hear back to schedule your consultation.</p>
+      <div class="about-facts" style="margin-top:30px;">
+        <div><b>Response</b>Personally reviewed by Amit</div>
+        <div><b>Coverage</b>USA · Australia · India · International</div>
+      </div>
+    </div>
+    <div>
+      <div class="form-success" id="formSuccess">
+        <h3 style="font-size:1.2rem;">Thank you — your request has been received.</h3>
+        <p style="margin-top:8px;">Amit will personally review your details and reach out to schedule your consultation.</p>
+      </div>
+      <form id="consultForm" novalidate>
+        <div class="form-row">
+          <div>
+            <label for="fName">Name</label>
+            <input id="fName" name="name" type="text" required>
+            <div class="field-error" data-for="fName"></div>
+          </div>
+          <div>
+            <label for="fEmail">Email</label>
+            <input id="fEmail" name="email" type="email" required>
+            <div class="field-error" data-for="fEmail"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="fPhone">Phone / WhatsApp</label>
+            <input id="fPhone" name="phone" type="tel" required>
+            <div class="field-error" data-for="fPhone"></div>
+          </div>
+          <div>
+            <label for="fCountry">Country</label>
+            <select id="fCountry" name="country" required>
+              <option value="">Select</option>
+              <option>USA</option>
+              <option>Australia</option>
+              <option>India</option>
+              <option>Other</option>
+            </select>
+            <div class="field-error" data-for="fCountry"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="fGoal">Primary Goal</label>
+            <select id="fGoal" name="goal" required>
+              <option value="">Select</option>
+              <option>Lose body fat</option>
+              <option>Build strength</option>
+              <option>Improve physique</option>
+              <option>General fitness</option>
+              <option>Wedding preparation</option>
+            </select>
+            <div class="field-error" data-for="fGoal"></div>
+          </div>
+          <div>
+            <label for="fLevel">Current Fitness Level</label>
+            <select id="fLevel" name="level" required>
+              <option value="">Select</option>
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+            <div class="field-error" data-for="fLevel"></div>
+          </div>
+        </div>
+        <div>
+          <label for="fFormat">Preferred Training Format</label>
+          <select id="fFormat" name="format" required>
+            <option value="">Select</option>
+            <option>Online coaching</option>
+            <option>In-person (gym)</option>
+            <option>In-person (home)</option>
+          </select>
+          <div class="field-error" data-for="fFormat"></div>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Request a Consultation</button>
+        <p class="form-note">This form is not yet connected to a backend. Submissions are validated only.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <p>© <span id="yr"></span> Amit Singh Rathore. Trainer at GroomFit.</p>
+    <p>Advanced Fitness Trainer · Women's Fitness Coach</p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+</div>
+
+<script>
+(function(){
+  try{document.getElementById('yr').textContent = new Date().getFullYear();}catch(e){}
+
+  var burger = document.getElementById('burgerBtn');
+  var mnav = document.getElementById('mnav');
+  burger.addEventListener('click', function(){
+    var open = mnav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('#mnav a').forEach(function(a){
+    a.addEventListener('click', function(){ mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length>1){
+        var el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
+    });
+  });
+
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var form = document.getElementById('consultForm');
+  var success = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var valid = true;
+    var fields = form.querySelectorAll('[required]');
+    fields.forEach(function(f){
+      var errEl = form.querySelector('.field-error[data-for="'+f.id+'"]');
+      var val = f.value.trim();
+      var ok = true;
+      if(!val) ok = false;
+      if(f.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) ok = false;
+      if(f.type === 'tel' && val && val.replace(/[^0-9]/g,'').length < 7) ok = false;
+      if(errEl){
+        errEl.textContent = ok ? '' : (f.type==='email' ? 'Enter a valid email address' : f.type==='tel' ? 'Enter a valid phone number' : 'This field is required');
+      }
+      if(!ok) valid = false;
+    });
+    if(valid){
+      success.classList.add('show');
+      success.scrollIntoView({behavior:'smooth', block:'center'});
+      form.reset();
+    }
+  });
+})();
+</script>
+</body>
+</html>
